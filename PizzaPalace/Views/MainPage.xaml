@@ -15,13 +15,13 @@
 
         <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="Show Veggie" VerticalOptions="Center" TextColor="Black"/>
-            <CheckBox x:Name="CheckVeggie" Color="Orange" Margin="0, 0, 10, 0"/>
+            <CheckBox x:Name="CheckVeggie" Color="Orange" Margin="0, 0, 10, 0" IsChecked="{Binding ShowVegan}"/>
 
             <Label Text="Show Pizza" VerticalOptions="Center" TextColor="Black"/>
-            <CheckBox x:Name="CheckPizza" Color="Orange" Margin="0, 0, 10, 0"/>
+            <CheckBox x:Name="CheckPizza" Color="Orange" Margin="0, 0, 10, 0" IsChecked="{Binding ShowPizza}"/>
 
             <Label Text="Show Other" VerticalOptions="Center" TextColor="Black"/>
-            <CheckBox x:Name="CheckOther" Color="Orange" Margin="0, 0, 0, 0"/>
+            <CheckBox x:Name="CheckOther" Color="Orange" Margin="0, 0, 0, 0" IsChecked="{Binding ShowOther}"/>
             
         </StackLayout>
 
@@ -42,8 +42,7 @@
                             <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
                             <Label Text="{Binding Name}" Margin="20, 0, 0, 0" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
                             <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="18" FontAttributes="Italic" VerticalTextAlignment="Center" Grid.Column="2" TextColor="Black"/>
-                            <Button Text="+" Grid.Column="3" Margin="0, 0, 0, 0" FontSize="20" TextColor="Green" FontAttributes="Bold" BackgroundColor="DarkOrange"/>
-                            <Button Text="-" Grid.Column="4" Margin="0, 0, 0, 0" FontSize="20" TextColor="Red" FontAttributes="Bold" BackgroundColor="DarkOrange"/>
+                            <Button Text="+" Grid.Column="4" Margin="0, 0, 0, 0" FontSize="20" TextColor="Green" FontAttributes="Bold" BackgroundColor="DarkOrange" Clicked="Button_Add_Clicked" CommandParameter="{Binding Name}"/>
 
 
                         </Grid>
@@ -52,11 +51,46 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackLayout BackgroundColor="IndianRed">
-            <Label Text="Total charge: 0,00" Margin="30, 5, 30, 5"/>
-            <Label Text="Total Pizzas: 0" Margin="30, 0, 30, 5"/>
-            <Button Text="Pay now" Margin="30, 0, 30, 5"/>
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.33*" />
+                <ColumnDefinition Width="0.33*" />
+                <ColumnDefinition Width="0.33*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="2" Grid.Row="0"  Text="{Binding Order_TotalAmount, StringFormat='Total price: {0:N} SEK'}" Margin="0, 5, 0, 5"/>
+            <Label Grid.Column="2" Grid.Row="1" Text="{Binding Order_TotalNumberOfPizzas, StringFormat='Number of pizzas: {0:N}'}" Margin="0, 5, 0, 5"/>
+            <Button Grid.Column="2" Grid.Row="2" Text="Pay now" Margin="10, 0, 30, 10" Clicked="Button_Pay_Clicked"/>
+
+            <ListView ItemsSource="{Binding Order}" RowHeight="30" SeparatorColor="Orange" BackgroundColor="White" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="5, 5, 0, 5" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.05*" />
+                                    <ColumnDefinition Width="0.4*" />
+                                    <ColumnDefinition Width="0.25*" />
+                                    <ColumnDefinition Width="0.10*" />
+                                    <ColumnDefinition Width="0.10*" />
+                                    <ColumnDefinition Width="0.10*" />
+                                </Grid.ColumnDefinitions>
+                                <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
+                                <Label Text="{Binding Name}" Margin="12, 0, 0, 0" FontSize="14" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
+                                <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="12" FontAttributes="Italic" VerticalTextAlignment="Center" Grid.Column="2" TextColor="Black"/>
+                                <Button Text="Remove" Grid.Column="3" Grid.ColumnSpan="3" Margin="0, 0, 0, 0" FontSize="10" TextColor="Red" FontAttributes="Bold" BackgroundColor="White" CommandParameter="{Binding Name}" Clicked="Button_Delete_Clicked"/>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
 
     </StackLayout>
 

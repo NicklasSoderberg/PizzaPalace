@@ -8,13 +8,10 @@ namespace PizzaPalace.Models
     {
         public string Name {get; set;}
         public double Price { get; set; }
-        public bool Vegan { get; set; }
-
-        public Pizza(string setName, double setPrice, bool setVegan)
+        public Pizza(string setName, double setPrice)
         {
             Name = setName;
             Price = setPrice;
-            Vegan = setVegan;
         }
     }
 
