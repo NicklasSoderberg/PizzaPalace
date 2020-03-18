@@ -1,0 +1,13 @@
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\PizzaPalace.csprojAssemblyReference.cache
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\PizzaPalace.AssemblyInfoInputs.cache
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\PizzaPalace.AssemblyInfo.cs
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\PizzaPalace.deps.json
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\PizzaPalace.dll
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\ref\PizzaPalace.dll
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\PizzaPalace.pdb
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\PizzaPalace.dll
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\ref\PizzaPalace.dll
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\obj\Debug\netstandard2.0\PizzaPalace.pdb

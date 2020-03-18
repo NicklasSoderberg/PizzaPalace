@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PizzaPalace.MainPage"
+             xmlns:local="clr-namespace:PizzaPalace;assembly=PizzaPalace"
+             BackgroundColor="White">
+
+   
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 20, 0, 10"/>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Show Veggie" VerticalOptions="Center" TextColor="Black"/>
+            <CheckBox x:Name="CheckVeggie" Color="Orange" Margin="0, 0, 10, 0"/>
+
+            <Label Text="Show Pizza" VerticalOptions="Center" TextColor="Black"/>
+            <CheckBox x:Name="CheckPizza" Color="Orange" Margin="0, 0, 10, 0"/>
+
+            <Label Text="Show Other" VerticalOptions="Center" TextColor="Black"/>
+            <CheckBox x:Name="CheckOther" Color="Orange" Margin="0, 0, 0, 0"/>
+            
+        </StackLayout>
+
+
+            <ListView ItemsSource="{Binding Pizzas}" RowHeight="50" SeparatorColor="Black" BackgroundColor="DarkOrange">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.05*" />
+                                <ColumnDefinition Width="0.4*" />
+                                <ColumnDefinition Width="0.25*" />
+                                <ColumnDefinition Width="0.10*" />
+                                <ColumnDefinition Width="0.10*" />
+                                <ColumnDefinition Width="0.10*" />
+                            </Grid.ColumnDefinitions>
+                            <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
+                            <Label Text="{Binding Name}" Margin="20, 0, 0, 0" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
+                            <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="18" FontAttributes="Italic" VerticalTextAlignment="Center" Grid.Column="2" TextColor="Black"/>
+                            <Button Text="+" Grid.Column="3" Margin="0, 0, 0, 0" FontSize="20" TextColor="Green" FontAttributes="Bold" BackgroundColor="DarkOrange"/>
+                            <Button Text="-" Grid.Column="4" Margin="0, 0, 0, 0" FontSize="20" TextColor="Red" FontAttributes="Bold" BackgroundColor="DarkOrange"/>
+
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout BackgroundColor="IndianRed">
+            <Label Text="Total charge: 0,00" Margin="30, 5, 30, 5"/>
+            <Label Text="Total Pizzas: 0" Margin="30, 0, 30, 5"/>
+            <Button Text="Pay now" Margin="30, 0, 30, 5"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
