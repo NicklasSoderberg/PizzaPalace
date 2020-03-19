@@ -720,7 +720,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\PizzaPalace.dll">
       <PackagePath>PizzaPalace.dll</PackagePath>
-      <Modified>2020-03-18T20:52:59.296</Modified>
+      <Modified>2020-03-18T23:55:58.950</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
