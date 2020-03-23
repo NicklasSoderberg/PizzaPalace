@@ -21,8 +21,8 @@ namespace PizzaPalace.ViewModels
             }
         }
 
-        public double order_TotalAmount = 0;
-        public double Order_TotalAmount
+        public int order_TotalAmount = 0;
+        public int Order_TotalAmount
         {
             get => order_TotalAmount;
             set
@@ -39,9 +39,9 @@ namespace PizzaPalace.ViewModels
             set
             {
                 showVegan = value;
-                Pizzas = getMenu(showVegan, showPizza, showOther);
+                MenuItems = getMenu(showVegan, showPizza, showOther);
                 OnPropertyChanged(nameof(ShowVegan));
-                OnPropertyChanged(nameof(Pizzas));
+                OnPropertyChanged(nameof(MenuItems));
             }
         }
 
@@ -52,9 +52,9 @@ namespace PizzaPalace.ViewModels
             set
             {
                 showPizza = value;
-                Pizzas = getMenu(showVegan, showPizza, showOther);
+                MenuItems = getMenu(showVegan, showPizza, showOther);
                 OnPropertyChanged(nameof(ShowPizza));
-                OnPropertyChanged(nameof(Pizzas));
+                OnPropertyChanged(nameof(MenuItems));
             }
         }
 
@@ -65,9 +65,9 @@ namespace PizzaPalace.ViewModels
             set
             {
                 showOther = value;
-                Pizzas = getMenu(showVegan, showPizza, showOther);
+                MenuItems = getMenu(showVegan, showPizza, showOther);
                 OnPropertyChanged(nameof(ShowOther));
-                OnPropertyChanged(nameof(Pizzas));
+                OnPropertyChanged(nameof(MenuItems));
             }
         }
 
@@ -93,11 +93,11 @@ namespace PizzaPalace.ViewModels
             }
         }*/
 
-        public ObservableCollection<Pizza> Pizzas { get; set; }
+        public ObservableCollection<Pizza> MenuItems { get; set; }
 
         public PizzaViewModel()
         {
-            Pizzas = new ObservableCollection<Pizza>();
+            MenuItems = new ObservableCollection<Pizza>();
             Order = new ObservableCollection<Pizza>();
         }
 
@@ -107,31 +107,31 @@ namespace PizzaPalace.ViewModels
 
             if (isVeggan)
             {
-                tempList.Add(new Pizza("Veggiepizza", 84.99));
+                tempList.Add(new Pizza("Veggiepizza", 84));
             }
 
             if (isPizza)
             {
-                tempList.Add(new Pizza("Vezuvio", 54.99));
-                tempList.Add(new Pizza("Kebab", 49.99));
-                tempList.Add(new Pizza("Mafia", 59.99));
-                tempList.Add(new Pizza("Bolognese", 59.99));
-                tempList.Add(new Pizza("Italia Special", 64.99));
-                tempList.Add(new Pizza("Margarita", 44.99));
-                tempList.Add(new Pizza("Calabrese", 74.99));
+                tempList.Add(new Pizza("Vezuvio", 54));
+                tempList.Add(new Pizza("Kebab", 49));
+                tempList.Add(new Pizza("Mafia", 59));
+                tempList.Add(new Pizza("Bolognese", 59));
+                tempList.Add(new Pizza("Italia Special", 64));
+                tempList.Add(new Pizza("Margarita", 44));
+                tempList.Add(new Pizza("Calabrese", 74));
             }
 
             if (isOther)
             {
-                tempList.Add(new Pizza("Pasta", 74.99));
+                tempList.Add(new Pizza("Pasta", 74));
             }
 
             return tempList;
         }
 
-        public double order_Calculate()
+        public int order_Calculate()
         {
-            double tCalc = 0.00;
+            int tCalc = 0;
             for(int i = 0; i < Order.Count; i++)
             {
                 tCalc = tCalc + Order[i].Price;

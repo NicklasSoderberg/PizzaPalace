@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="image\pizzapalace.png" />
-    <EmbeddedResource Include="image\pizzaphoto.png" />
   </ItemGroup>
 
   <ItemGroup>

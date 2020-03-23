@@ -8,7 +8,6 @@
              xmlns:local="clr-namespace:PizzaPalace;assembly=PizzaPalace"
              BackgroundColor="Beige">
 
-
     <StackLayout>
         <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 20, 0, 10"/>
 
@@ -22,7 +21,7 @@
             <Label Text="Show Other" VerticalOptions="Center" TextColor="Black"/>
             <CheckBox x:Name="CheckOther" Color="Orange" Margin="0, 0, 0, 0" IsChecked="{Binding ShowOther}"/>
         </StackLayout>
-        <ListView ItemsSource="{Binding Pizzas}" RowHeight="50" SeparatorColor="Black" BackgroundColor="White" Margin="10, 0, 15, 0">
+        <ListView ItemsSource="{Binding MenuItems}" RowHeight="50" SeparatorColor="Black" BackgroundColor="White" Margin="10, 0, 15, 0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -73,12 +72,9 @@
                                     <ColumnDefinition Width="0.10*" />
                                     <ColumnDefinition Width="0.10*" />
                                 </Grid.ColumnDefinitions>
-                                <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
                                 <Label Text="{Binding Name}" Margin="12, 0, 0, 0" FontSize="14" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
                                 <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="12" FontAttributes="Italic" VerticalTextAlignment="Center" Grid.Column="2" TextColor="Black"/>
                                 <Button Text="Remove" Grid.Column="3" Grid.ColumnSpan="3" Margin="0, 0, 0, 0" FontSize="10" TextColor="Red" FontAttributes="Bold" BackgroundColor="White" CommandParameter="{Binding Name}" Clicked="Button_Delete_Clicked"/>
-
-
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

@@ -9,6 +9,7 @@ using PizzaPalace.ViewModels;
 
 namespace PizzaPalace
 {
+
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
@@ -25,11 +26,11 @@ namespace PizzaPalace
         private void Button_Add_Clicked(object sender, EventArgs e)
         {
             var T = (Button)sender;
-            for(int i = 0; i < PizzaObject.Pizzas.Count; i++)
+            for(int i = 0; i < PizzaObject.MenuItems.Count; i++)
             {
-                if(T.CommandParameter.ToString() == PizzaObject.Pizzas[i].Name)
+                if(T.CommandParameter.ToString() == PizzaObject.MenuItems[i].Name)
                 {
-                    PizzaObject.Order.Add(PizzaObject.Pizzas[i]);
+                    PizzaObject.Order.Add(PizzaObject.MenuItems[i]);
                     PizzaObject.Order_TotalNumberOfPizzas = PizzaObject.order_NumberInCart();
                     PizzaObject.Order_TotalAmount = PizzaObject.order_Calculate();
                     break;

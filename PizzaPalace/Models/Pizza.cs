@@ -7,8 +7,8 @@ namespace PizzaPalace.Models
     class Pizza
     {
         public string Name {get; set;}
-        public double Price { get; set; }
-        public Pizza(string setName, double setPrice)
+        public int Price { get; set; }
+        public Pizza(string setName, int setPrice)
         {
             Name = setName;
             Price = setPrice;
