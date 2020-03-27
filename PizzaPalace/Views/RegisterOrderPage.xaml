@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PizzaPalace.RegisterOrderPage"
+             xmlns:local="clr-namespace:PizzaPalace;assembly=PizzaPalace"
+             BackgroundColor="Beige">
+
+    <StackLayout>
+        <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 30, 0, 10"/>
+
+
+        <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasShadow="False" HeightRequest="500" WidthRequest="300" Margin="0, 0, 0, 0" BackgroundColor="Beige" BorderColor="Beige">
+            <StackLayout>
+                <Label Text="Your details" HorizontalOptions="Center" FontSize="Large" Margin="0, 0, 0, 0"/>
+                <Entry Text="" Placeholder="Firstname" VerticalOptions="Center"/>
+                <Entry Text="" Placeholder="Lastname"  VerticalOptions="Center" />
+                <Entry Text="" Placeholder="E-Mail"  VerticalOptions="Center" />
+
+                <Label Text="Delivery details" HorizontalOptions="Center" FontSize="Large" Margin="0, 15, 0, 0"/>
+                <Entry Text="" Placeholder="Address"  TextColor="Black"/>
+                <Entry Text="" Placeholder="Phone number" VerticalOptions="Center" />
+
+                <Label Text="Total: 500 SEK" HorizontalOptions="Center" FontSize="Medium" Margin="0, 15, 0, 0" TextColor="Red"/>
+
+                <Button Text="Deliver now" HorizontalOptions="Center" VerticalOptions="EndAndExpand" BackgroundColor="Orange" Clicked="Button_DeliverNow_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

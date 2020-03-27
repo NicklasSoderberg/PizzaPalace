@@ -11,16 +11,15 @@ namespace PizzaPalace
 {
 
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class OrderPage : ContentPage
     {
-        private PizzaViewModel PizzaObject;
+        private OrderPageModel PizzaObject;
 
-        public MainPage()
+        public OrderPage()
         {
             InitializeComponent();
-            PizzaObject = new PizzaViewModel();
+            PizzaObject = new OrderPageModel();
             BindingContext = PizzaObject;
-
         }
 
         private void Button_Add_Clicked(object sender, EventArgs e)
@@ -53,9 +52,14 @@ namespace PizzaPalace
             }
         }
 
-        private void Button_Pay_Clicked(object sender, EventArgs e)
+        private async void Button_Delivery_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Hello", PizzaObject.order_Calculate().ToString(), "ok");
+            await Navigation.PushAsync(new RegisterOrderPage());
+        }
+
+        private async void Button_CheckOrders_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CheckOrderPage());
         }
     }
 }

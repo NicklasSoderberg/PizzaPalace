@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PizzaPalace.CheckOrderPage"
+             xmlns:local="clr-namespace:PizzaPalace;assembly=PizzaPalace"
+             BackgroundColor="Beige">
+
+    <StackLayout>
+        <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 30, 0, 10"/>
+
+
+        <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasShadow="False" HeightRequest="300" WidthRequest="300" Margin="0, 0, 0, 0" BackgroundColor="Beige" BorderColor="Beige">
+            <StackLayout>
+                <Entry Text="" Placeholder="Ordernumber"  VerticalOptions="Center"/>
+                <Entry Text="" Placeholder="Password"  VerticalOptions="Center" IsVisible="False"/>
+                    <Button Text="Check" HorizontalOptions="Center" BackgroundColor="Orange"/>
+            </StackLayout>
+        </Frame>
+        <Label Text="Any problems?" HorizontalOptions="Center"/>
+        <Label Text="Call us at +46702-523624" HorizontalOptions="Center" Margin="0, 0, 0, 20"/>
+    </StackLayout>
+</ContentPage>

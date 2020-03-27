@@ -4,14 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PizzaPalace.MainPage"
+             x:Class="PizzaPalace.OrderPage"
              xmlns:local="clr-namespace:PizzaPalace;assembly=PizzaPalace"
              BackgroundColor="Beige">
 
     <StackLayout>
-        <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 20, 0, 10"/>
+        <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="15, 10, 15, 0"/>
+        <Button Text="Check your order here" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Beige" Clicked="Button_CheckOrders_Clicked"/>
 
-        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="Show Veggie" VerticalOptions="Center" TextColor="Black"/>
             <CheckBox x:Name="CheckVeggie" Color="Orange" Margin="0, 0, 10, 0" IsChecked="{Binding ShowVegan}"/>
 
@@ -35,9 +36,10 @@
                                 <ColumnDefinition Width="0.10*" />
                             </Grid.ColumnDefinitions>
                             <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
-                            <Label Text="{Binding Name}" Margin="20, 0, 0, 0" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Center" Grid.Column="1" TextColor="Black"/>
-                            <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="18" FontAttributes="Italic" VerticalTextAlignment="Center" Grid.Column="2" TextColor="Black"/>
-                            <Button Text="+" Grid.Column="4" Margin="0, 0, 0, 0" FontSize="20" TextColor="Green" FontAttributes="Bold" BackgroundColor="White" Clicked="Button_Add_Clicked" CommandParameter="{Binding Name}"/>
+                            <Label Text="{Binding Name}" Margin="10, 3, 0, 0" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Start" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black"/>
+                            <Label Text="{Binding string_Ingredienser}" Margin="10, 0, 0, 5" Grid.Column="0" Grid.ColumnSpan="3" VerticalOptions="End"/>
+                            <Label Text="{Binding Price, StringFormat='{0:N} SEK'}" FontSize="18" FontAttributes="Italic" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Grid.Column="2" Grid.ColumnSpan="3"   TextColor="Black"/>
+                            <Button Text="+" Grid.Column="5" Margin="0, 0, 0, 0" FontSize="20" TextColor="Green" FontAttributes="Bold" BackgroundColor="White" Clicked="Button_Add_Clicked" CommandParameter="{Binding Name}"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
@@ -55,9 +57,10 @@
                 <RowDefinition Height="0.25*" />
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
-            <Label Grid.Column="2" Grid.Row="0"  Text="{Binding Order_TotalAmount, StringFormat='Price: {0:N} SEK'}" Margin="0, 5, 0, 0" FontAttributes="Bold"/>
-            <Label Grid.Column="2" Grid.Row="1" Text="{Binding Order_TotalNumberOfPizzas, StringFormat='# of items: {0}'}" Margin="0, 5, 0, 5"/>
-            <Button Grid.Column="2" Grid.Row="2" Text="Pay now" Margin="10, 0, 30, 10" Clicked="Button_Pay_Clicked" BackgroundColor="Orange"/>
+            <Label Grid.Column="2" Grid.Row="0" Margin="0, 55, 0, 0"/>
+            <Label Grid.Column="2" Grid.Row="0" Text="{Binding Order_TotalAmount, StringFormat='Price: {0:N} SEK'}" Margin="0, 0, 0, 0" FontAttributes="Bold"/>
+            <Label Grid.Column="2" Grid.Row="1" Text="{Binding Order_TotalNumberOfPizzas, StringFormat='# of items: {0}'}" Margin="0, 0, 0, 0"/>
+            <Button Grid.Column="2" Grid.Row="2" Text="Next" Margin="10, 0, 15, 10" Clicked="Button_Delivery_Clicked" BackgroundColor="Orange"/>
 
             <ListView ItemsSource="{Binding Order}" RowHeight="30" SeparatorColor="Orange" BackgroundColor="White" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10, 5, 0, 10" >
                 <ListView.ItemTemplate>
@@ -81,7 +84,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
-
     </StackLayout>
-
 </ContentPage>

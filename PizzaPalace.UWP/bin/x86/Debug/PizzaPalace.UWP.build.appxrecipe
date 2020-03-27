@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\PizzaPalace.UWP.exe">
       <PackagePath>entrypoint\PizzaPalace.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Nicklas\.nuget\packages\newtonsoft.json\12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.9\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>

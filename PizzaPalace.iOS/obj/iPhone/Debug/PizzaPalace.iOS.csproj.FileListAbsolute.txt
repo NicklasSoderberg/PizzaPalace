@@ -1,5 +1,6 @@
 C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\PizzaPalace.iOS.exe
 C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\PizzaPalace.iOS.pdb
+C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
 C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\Xamarin.Essentials.dll
 C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\Xamarin.Essentials.pdb
 C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll
