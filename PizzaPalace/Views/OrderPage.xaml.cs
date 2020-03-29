@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using PizzaPalace.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace PizzaPalace
 {
@@ -20,6 +21,12 @@ namespace PizzaPalace
             InitializeComponent();
             PizzaObject = new OrderPageModel();
             BindingContext = PizzaObject;
+            MessagingCenter.Subscribe<RegisterOrderPage>(this, "Clear", (sender) =>
+            {
+                PizzaObject.Order.Clear();
+                PizzaObject.Order_TotalNumberOfPizzas = 0;
+                PizzaObject.Order_TotalAmount = 0;
+            });
         }
 
         private void Button_Add_Clicked(object sender, EventArgs e)
@@ -54,12 +61,14 @@ namespace PizzaPalace
 
         private async void Button_Delivery_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterOrderPage());
+            await Navigation.PushAsync(new RegisterOrderPage(PizzaObject.Order.ToList()));
         }
 
         private async void Button_CheckOrders_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CheckOrderPage());
         }
+
+        
     }
 }

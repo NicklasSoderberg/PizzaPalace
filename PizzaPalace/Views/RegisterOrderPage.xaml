@@ -15,15 +15,15 @@
         <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasShadow="False" HeightRequest="500" WidthRequest="300" Margin="0, 0, 0, 0" BackgroundColor="Beige" BorderColor="Beige">
             <StackLayout>
                 <Label Text="Your details" HorizontalOptions="Center" FontSize="Large" Margin="0, 0, 0, 0"/>
-                <Entry Text="" Placeholder="Firstname" VerticalOptions="Center"/>
-                <Entry Text="" Placeholder="Lastname"  VerticalOptions="Center" />
-                <Entry Text="" Placeholder="E-Mail"  VerticalOptions="Center" />
+                <Entry Text="{Binding Input_FirstName}" x:Name="Entry_FirstName" Placeholder="Firstname" VerticalOptions="Center"/>
+                <Entry Text="{Binding Input_LastName}" x:Name="Entry_LastName" Placeholder="Lastname"  VerticalOptions="Center" />
+                <Entry Text="{Binding Input_Mail}" x:Name="Entry_Mail" Placeholder="E-Mail"  VerticalOptions="Center" />
 
                 <Label Text="Delivery details" HorizontalOptions="Center" FontSize="Large" Margin="0, 15, 0, 0"/>
-                <Entry Text="" Placeholder="Address"  TextColor="Black"/>
-                <Entry Text="" Placeholder="Phone number" VerticalOptions="Center" />
+                <Entry Text="{Binding Input_Address}" x:Name="Entry_Address" Placeholder="Address"  TextColor="Black"/>
+                <Entry Text="{Binding Input_Phone}" x:Name="Entry_Phone" Placeholder="Phone number" VerticalOptions="Center" />
 
-                <Label Text="Total: 500 SEK" HorizontalOptions="Center" FontSize="Medium" Margin="0, 15, 0, 0" TextColor="Red"/>
+                <Label Text="{Binding Order_TotalAmount, StringFormat='Price: {0:N} SEK'}" HorizontalOptions="Center" FontSize="Medium" Margin="0, 15, 0, 0" TextColor="Red"/>
 
                 <Button Text="Deliver now" HorizontalOptions="Center" VerticalOptions="EndAndExpand" BackgroundColor="Orange" Clicked="Button_DeliverNow_Clicked"/>
             </StackLayout>

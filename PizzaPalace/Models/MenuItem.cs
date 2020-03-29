@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PizzaPalace.Models
 {
-    class MenuItem
+    public class MenuItem
     {
         public int ID { get; set; }
         public string Name { get; set; }

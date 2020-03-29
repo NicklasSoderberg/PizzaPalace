@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace PizzaPalace
 {
@@ -9,7 +7,6 @@ namespace PizzaPalace
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage (new OrderPage());
         }
 

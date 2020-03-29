@@ -139,6 +139,7 @@ namespace PizzaPalace.ViewModels
             }
             for(int i = 0; i < APIMenuItems.Count; i++)
             {
+                APIMenuItems[i].string_Ingredienser = "";
                 try
                 {
                     var client = new HttpClient();
@@ -146,7 +147,14 @@ namespace PizzaPalace.ViewModels
                     APIMenuItems[i].Ingredienser = JsonConvert.DeserializeObject<List<string>>(response);
                     for(int ii = 0; ii < APIMenuItems[i].Ingredienser.Count; ii++)
                     {
-                        APIMenuItems[i].string_Ingredienser += APIMenuItems[i].Ingredienser[ii] + ", ";
+                        if (APIMenuItems[i].string_Ingredienser.Length > 0)
+                        {
+                            APIMenuItems[i].string_Ingredienser += ", " + APIMenuItems[i].Ingredienser[ii];
+                        }
+                        else
+                        {
+                            APIMenuItems[i].string_Ingredienser += APIMenuItems[i].Ingredienser[ii];
+                        }
                     }
                 }
                 catch (Exception e)

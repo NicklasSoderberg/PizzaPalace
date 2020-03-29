@@ -13,11 +13,26 @@ namespace PizzaPalace
     [DesignTimeVisible(false)]
     public partial class CheckOrderPage : ContentPage
     {
+        private CheckOrderModel OrderModel;
         public CheckOrderPage()
         {
             InitializeComponent();
-            //PizzaObject = new OrderPageModel();
-            //BindingContext = PizzaObject;
+            OrderModel = new CheckOrderModel();
+            BindingContext = OrderModel;
+        }
+
+        private async void Button_Checked(object sender, EventArgs e)
+        {
+            if(Entry_OrderNumber.Text == "ADMIN")
+            {
+                await Navigation.PushAsync(new AdminLoginPage());
+            }
+            else
+            {
+                //check via API
+            }
+
+
         }
     }
 }
