@@ -14,8 +14,8 @@
 
         <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HasShadow="False" HeightRequest="300" WidthRequest="300" Margin="0, 0, 0, 0" BackgroundColor="Beige" BorderColor="Beige">
             <StackLayout>
-                <Entry x:Name="Entry_OrderNumber" Text="{Binding Input_OrderNumber}" Placeholder="Ordernumber/Phonenumber"  VerticalOptions="Center"/>
-                <Entry x:Name="Entry_Password" Text="{Binding Input_Password}" Placeholder="Password"  VerticalOptions="Center" IsVisible="{Binding Input_Password_Visable}"/>
+                <Entry x:Name="Entry_OrderNumber" Text="{Binding Input_OrderNumber}" Placeholder="Phonenumber"  VerticalOptions="Center"/>
+                <Entry x:Name="Entry_Password" Text="{Binding Input_Password}" Placeholder="Password"  VerticalOptions="Center" IsVisible="{Binding Input_Password_Visable}" IsPassword="True"/>
                 <Button Text="Check order" HorizontalOptions="Center" BackgroundColor="Orange" Clicked="Button_Checked"/>
             </StackLayout>
         </Frame>

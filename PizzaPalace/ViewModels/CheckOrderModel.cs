@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 
 namespace PizzaPalace.ViewModels
 {
@@ -54,6 +56,65 @@ namespace PizzaPalace.ViewModels
                 input_Password_Visable = value;
                 OnPropertyChanged(nameof(Input_Password_Visable));
             }
+        }
+
+        public OrderItems API_Order(string PhoneNumber)
+        {
+            string URL = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order?PhoneNumber=" + PhoneNumber;
+                    break;
+                case Device.Android:
+                    URL = "http://10.0.2.2/api/order?PhoneNumber=" + PhoneNumber;
+                    break;
+                case Device.UWP:
+                    URL = "http://127.0.0.2/api/order?PhoneNumber=" + PhoneNumber;
+                    break;
+            }
+            try
+            {
+                var client = new HttpClient();
+                var response = client.GetStringAsync(URL).Result;
+                OrderItems returnThis;
+                returnThis = JsonConvert.DeserializeObject<OrderItems>(response);
+                return returnThis;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return null;
+        }
+
+        public string API_OrderIsDone(int OrderID)
+        {
+            string URL = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order?OrderID=" + OrderID.ToString();
+                    break;
+                case Device.Android:
+                    URL = "http://10.0.2.2/api/order?OrderID=" + OrderID.ToString();
+                    break;
+                case Device.UWP:
+                    URL = "http://127.0.0.2/api/order?OrderID=" + OrderID.ToString();
+                    break;
+            }
+            try
+            {
+                var client = new HttpClient();
+                var response = client.GetStringAsync(URL).Result;
+                
+                return JsonConvert.DeserializeObject<string>(response);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
+            return null;
         }
 
     }

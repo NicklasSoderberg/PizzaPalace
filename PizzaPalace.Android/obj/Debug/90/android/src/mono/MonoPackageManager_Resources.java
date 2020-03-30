@@ -3,7 +3,11 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "PizzaPalace.Android.dll" comes first in this list. */
 		"PizzaPalace.Android.dll",
+		"CommonServiceLocator.dll",
 		"FormsViewGroup.dll",
+		"GalaSoft.MvvmLight.dll",
+		"GalaSoft.MvvmLight.Extras.dll",
+		"GalaSoft.MvvmLight.Platform.dll",
 		"Newtonsoft.Json.dll",
 		"PizzaPalace.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",

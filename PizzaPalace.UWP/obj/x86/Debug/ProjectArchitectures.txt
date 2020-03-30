@@ -1,1 +1,0 @@
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\PizzaPalace.UWP.csproj;x86

@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Net.Http.Headers;
 
 namespace PizzaPalace.ViewModels
 {
@@ -139,6 +140,44 @@ namespace PizzaPalace.ViewModels
             }
 
             return tEntry;
+        }
+
+        public void API_MakeOrder(OrderInfo Info)
+        {
+            string URL = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order";
+                    break;
+                case Device.Android:
+                    URL = "http://10.0.2.2/api/order";
+                    break;
+                case Device.UWP:
+                    URL = "http://127.0.0.2/api/order";
+                    break;
+            }
+            try
+            {
+                CompleteOrder Order = new CompleteOrder();
+                Order.NewOrderInfo = Info;
+                Order.OrderList = new List<OrderInfoItem>();
+
+                for (int i = 0; i < OrderList.Count(); i++)
+                {
+                    Order.OrderList.Add(new OrderInfoItem { ID_Item = OrderList[i].ID, ID_OrderInfo = 0});
+                }
+
+                var myContent = JsonConvert.SerializeObject(Order);
+                HttpContent c = new StringContent(myContent, Encoding.UTF8, "application/json");
+                var client = new HttpClient();
+                var result = client.PostAsync(new Uri(URL), c);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{0} Exception caught.", e);
+            }
         }
 
     }

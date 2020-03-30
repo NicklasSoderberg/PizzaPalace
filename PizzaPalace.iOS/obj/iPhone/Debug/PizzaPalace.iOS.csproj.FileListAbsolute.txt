@@ -1,7 +1,0 @@
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\optimized\
-C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.iOS\obj\iPhone\Debug\PizzaPalace.iOS.csprojAssemblyReference.cache

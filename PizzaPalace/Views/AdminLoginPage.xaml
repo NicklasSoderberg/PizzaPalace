@@ -10,6 +10,27 @@
 
     <StackLayout>
         <Image Source="{local:ImageResource PizzaPalace.image.pizzapalace.png}" Margin="0, 30, 0, 10"/>
-
+        <ListView ItemsSource="{Binding UnDoneOrders}" RowHeight="50" SeparatorColor="Black" BackgroundColor="White" Margin="10, 0, 15, 0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.2*" />
+                                <ColumnDefinition Width="0.2*" />
+                            </Grid.ColumnDefinitions>
+                            <!-- <Image Source="{local:ImageResource PizzaPalace.image.pizzaphoto.png}" /> -->
+                            <Label Text="{Binding ID, StringFormat='Order #{0}'}" Margin="5, 3, 0, 0" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Start" Grid.Column="0" TextColor="Black"/>
+                            <Label Text="{Binding Phone}" Margin="5, 0, 0, 5" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End"/>
+                            <Label Text="{Binding OrderTime}" FontSize="13" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="Center"/>
+                            <Button Text="Done" FontSize="12" FontAttributes="Italic" Grid.Column="4" TextColor="Black" BackgroundColor="Orange" CommandParameter="{Binding ID}" Clicked="Button_Done_Clicked"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
