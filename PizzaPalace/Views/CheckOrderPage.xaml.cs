@@ -24,7 +24,7 @@ namespace PizzaPalace
 
         private async void Button_Checked(object sender, EventArgs e)
         {
-            if(Entry_OrderNumber.Text == "ADMIN")
+            if((Entry_OrderNumber.Text == "ADMIN")&&(Entry_Password.Text == "ADMIN"))
             {
                 await Navigation.PushAsync(new AdminLoginPage());
             }

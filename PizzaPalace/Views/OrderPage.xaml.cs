@@ -15,7 +15,6 @@ namespace PizzaPalace
     public partial class OrderPage : ContentPage
     {
         private OrderPageModel PizzaObject;
-
         public OrderPage()
         {
             InitializeComponent();
@@ -61,7 +60,14 @@ namespace PizzaPalace
 
         private async void Button_Delivery_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterOrderPage(PizzaObject.Order.ToList()));
+            if(PizzaObject.Order.Count() > 0)
+            {
+                await Navigation.PushAsync(new RegisterOrderPage(PizzaObject.Order.ToList()));
+            }
+            else
+            {
+                await DisplayAlert("Empty cart", "Please select items from the menu", "OK");
+            }
         }
 
         private async void Button_CheckOrders_Clicked(object sender, EventArgs e)

@@ -54,20 +54,8 @@ namespace PizzaPalace.ViewModels
 
         public ObservableCollection<GetUnDoneOrders> API_GetUnDone()
         {
-            
-            string URL = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/admin";
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/admin";
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/admin";
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/admin";
             try
             {
                 var client = new HttpClient();
@@ -93,26 +81,14 @@ namespace PizzaPalace.ViewModels
 
         public void API_ChangeOrder(int id)
         {
-            string URL = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/admin";
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/admin";
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/admin";
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/admin";
             try
             {
                 var myContent = JsonConvert.SerializeObject(id);
                 HttpContent c = new StringContent(myContent, Encoding.UTF8, "application/json");
                 var client = new HttpClient();
                 var result = client.PostAsync(new Uri(URL), c);
-
             }
             catch (Exception e)
             {

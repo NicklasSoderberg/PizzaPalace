@@ -18,7 +18,6 @@ namespace PizzaPalace
         {
             InitializeComponent();
             AdminModel = new AdminLoginModel();
-            
             BindingContext = AdminModel;
         }
 

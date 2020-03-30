@@ -37,9 +37,7 @@ namespace PizzaPalace
                 temp.Address = Entry_Address.Text;
                 temp.Amount = OrderModel.Order_TotalAmount;
                 temp.OrderTime = System.DateTime.Now;
-
                 OrderModel.API_MakeOrder(temp);
-
                 await DisplayAlert("Order received", "We have received your order", "OK");
                 await Navigation.PopAsync();
             }

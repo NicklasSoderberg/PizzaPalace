@@ -14,8 +14,6 @@ namespace PizzaPalace.ViewModels
 {
     class OrderPageModel : INotifyPropertyChanged
     {
-        public string URL { get; set; }
-
         private bool gotMenu = false;
         
         public int order_TotalNumberOfPizzas = 0;
@@ -98,18 +96,8 @@ namespace PizzaPalace.ViewModels
 
         public void API_Menu()
         {
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/menu";
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/menu/";
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/menu/";
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/menu";
             try
             {
                 var client = new HttpClient();
@@ -125,18 +113,8 @@ namespace PizzaPalace.ViewModels
 
         public void API_Ingrediens()
         {
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/menu";
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/menu/";
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/menu/";
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/menu/";
             for(int i = 0; i < APIMenuItems.Count; i++)
             {
                 APIMenuItems[i].string_Ingredienser = "";

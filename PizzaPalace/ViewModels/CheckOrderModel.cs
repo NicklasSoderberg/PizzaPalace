@@ -60,19 +60,8 @@ namespace PizzaPalace.ViewModels
 
         public OrderItems API_Order(string PhoneNumber)
         {
-            string URL = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order?PhoneNumber=" + PhoneNumber;
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/order?PhoneNumber=" + PhoneNumber;
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/order?PhoneNumber=" + PhoneNumber;
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/order?PhoneNumber=" + PhoneNumber;
             try
             {
                 var client = new HttpClient();
@@ -90,19 +79,8 @@ namespace PizzaPalace.ViewModels
 
         public string API_OrderIsDone(int OrderID)
         {
-            string URL = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order?OrderID=" + OrderID.ToString();
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/order?OrderID=" + OrderID.ToString();
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/order?OrderID=" + OrderID.ToString();
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/order?OrderID=" + OrderID.ToString();
             try
             {
                 var client = new HttpClient();

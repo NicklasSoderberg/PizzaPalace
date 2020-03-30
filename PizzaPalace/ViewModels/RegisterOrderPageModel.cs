@@ -144,19 +144,8 @@ namespace PizzaPalace.ViewModels
 
         public void API_MakeOrder(OrderInfo Info)
         {
-            string URL = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    URL = "http://192.168.1.216:45457/PizzaAPI/api/order";
-                    break;
-                case Device.Android:
-                    URL = "http://10.0.2.2/api/order";
-                    break;
-                case Device.UWP:
-                    URL = "http://127.0.0.2/api/order";
-                    break;
-            }
+            Constants BaseURL = new Constants();
+            string URL = BaseURL.getBaseURL() + "/order";
             try
             {
                 CompleteOrder Order = new CompleteOrder();

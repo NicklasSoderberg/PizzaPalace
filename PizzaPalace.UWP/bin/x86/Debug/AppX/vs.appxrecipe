@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-03-29T23:24:10.651</Modified>
+      <Modified>2020-03-30T13:04:44.300</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\PizzaPalace.UWP.exe">
       <PackagePath>entrypoint\PizzaPalace.UWP.exe</PackagePath>
-      <Modified>2020-03-29T23:24:08.689</Modified>
+      <Modified>2020-03-30T13:04:39.937</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\.nuget\packages\commonservicelocator\2.0.2\lib\netstandard2.0\CommonServiceLocator.dll">
       <PackagePath>CommonServiceLocator.dll</PackagePath>
@@ -740,7 +740,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace\bin\Debug\netstandard2.0\PizzaPalace.dll">
       <PackagePath>PizzaPalace.dll</PackagePath>
-      <Modified>2020-03-29T23:46:37.487</Modified>
+      <Modified>2020-03-30T13:01:04.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Microsoft\Xamarin\NuGet\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -899,15 +899,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\Microsoft.UI.Xaml\DensityStyles\Compact.xbf">
       <PackagePath>Microsoft.UI.Xaml\DensityStyles\Compact.xbf</PackagePath>
-      <Modified>2020-03-29T23:24:08.547</Modified>
+      <Modified>2020-03-30T13:04:39.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-03-29T23:24:08.547</Modified>
+      <Modified>2020-03-30T13:04:39.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-03-29T23:24:08.547</Modified>
+      <Modified>2020-03-30T13:04:39.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -923,11 +923,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-03-29T23:24:09.860</Modified>
+      <Modified>2020-03-30T13:04:42.248</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Nicklas\source\repos\PizzaPalace\PizzaPalace\PizzaPalace.UWP\bin\x86\Debug\Core\PizzaPalace.UWP.exe">
       <PackagePath>PizzaPalace.UWP.exe</PackagePath>
-      <Modified>2020-03-29T23:24:10.631</Modified>
+      <Modified>2020-03-30T13:04:44.278</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
